@@ -3,7 +3,7 @@ import { Matrix } from '../../src/ts-maths';
 /**
  * Matrix test
  */
-describe('Vector', () => {
+describe('Matrix', () => {
 
   const matrix = new Matrix([
     [1, 2],
@@ -31,12 +31,12 @@ describe('Vector', () => {
 
   describe('#constructor', () => {
 
-    it('constructs vector', () =>  {
-      const vector = new Matrix([
+    it('constructs matrix', () =>  {
+      const matrix = new Matrix([
         [1, 2],
         [3, 4],
       ]);
-      expect(vector.rows).toEqual([
+      expect(matrix.rows).toEqual([
         [1, 2],
         [3, 4],
       ]);
