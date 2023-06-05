@@ -19,7 +19,11 @@
     "outDir": "dist/lib",
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "@/*": ["src/*"],
+      "ts-maths": ["src/ts-maths"],
+    }
   },
   "include": [
     "src"

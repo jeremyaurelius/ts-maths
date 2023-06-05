@@ -19,10 +19,12 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "start": "yarn ts-node -r tsconfig-paths/register",
+    "watch": "yarn nodemon --ext 'ts,js,json' --exec 'ts-node -r tsconfig-paths/register'",
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --entryPoints src/ts-maths.ts --theme default",
-    "start": "rollup -c rollup.config.ts -w",
+    "build:watch": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",

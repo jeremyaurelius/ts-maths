@@ -32,7 +32,16 @@ export default {
     // Allow json resolution
     json(),
     // Compile TypeScript files
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      tsconfigOverride: {
+        compilerOptions: {
+          // In tsconfig.json, we need set compilerOptions.module to "commonjs" to be able to use ts-node with import/export statements.
+          // RollupJS doesn't understand commonjs however, so the rollup config has an override for the module field.          
+          module: 'es2015',
+        },
+      },
+    }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),
     // Allow node_modules resolution, so you can use 'external' to control
