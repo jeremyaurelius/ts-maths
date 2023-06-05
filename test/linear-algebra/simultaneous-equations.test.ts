@@ -1,9 +1,9 @@
 import { SimultaneousEquations, SolutionFormat } from "../../src/ts-maths";
 
 /**
- * Vector test
+ * SimultaneousEquations test
  */
-describe('Vector', () => {
+describe('SimultaneousEquations', () => {
 
   describe('#solve', () => {
 
