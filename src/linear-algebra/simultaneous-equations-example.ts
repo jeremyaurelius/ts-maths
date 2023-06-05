@@ -1,6 +1,6 @@
-import { SimulataneousEquations } from "./simultaneous-equations";
+import { SimultaneousEquations } from "./simultaneous-equations";
 
-const solution = SimulataneousEquations.from([
+const solution = SimultaneousEquations.from([
   [2, 1],
   [2, 4],
 ], [2, 6], ['x', 'y']).getSolution();

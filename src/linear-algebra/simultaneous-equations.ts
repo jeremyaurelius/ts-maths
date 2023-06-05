@@ -1,7 +1,7 @@
 import { keyBy, memoize } from "lodash";
 import { Matrix } from "./matrix";
 
-export class SimulataneousEquations {
+export class SimultaneousEquations {
   
   constructor(
     readonly leftMatrix: Matrix,
@@ -22,7 +22,7 @@ export class SimulataneousEquations {
     rightColumn: number[],
     variables: string[] = rightColumn.map((_, i) => 'x' + (i + 1)),
   ) {
-    return new SimulataneousEquations(
+    return new SimultaneousEquations(
       new Matrix(leftRows),
       new Matrix(rightColumn.map(x => [x])),
       variables,

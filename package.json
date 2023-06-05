@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "yarn ts-node -r tsconfig-paths/register",
+    "sandbox": "yarn ts-node -r tsconfig-paths/register --require src/repl-sandbox.ts",
     "watch": "yarn nodemon --ext 'ts,js,json' --exec 'ts-node -r tsconfig-paths/register'",
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",

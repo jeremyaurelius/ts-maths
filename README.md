@@ -20,6 +20,12 @@ To start a REPL
 yarn start
 ```
 
+To start a REPL with the `ts-maths` library accessible via `global.tsMaths`:
+
+```
+yarn sandbox
+```
+
 To run a `src/**/*example.ts` file
 
 ```
