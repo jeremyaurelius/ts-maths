@@ -29,7 +29,7 @@ export class SimultaneousEquations {
 
   /**
    * @example // To find the solution of 2x + y = 12 and 6x + 5y = 40
-   * SimulataneousEquations.from(
+   * SimultaneousEquations.from(
    *  [2, 1],
    *  [6, 5],
    * ).setVars('x', 'y').solve();
