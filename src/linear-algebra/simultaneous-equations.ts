@@ -60,6 +60,10 @@ export class SimultaneousEquations {
     }
   });
 
+  solve(): Map<string, number>
+  solve(format: SolutionFormat.Map): Map<string, number>
+  solve(format: SolutionFormat.Dictionary): Record<string, number>
+  solve(format: SolutionFormat.Array): number[]
   solve(format = SolutionFormat.Map) {
     const solutions = this.getSolutionArray();
     const variables = this.variables || solutions.map((_, index) => 'x' + index);
@@ -78,6 +82,27 @@ export class SimultaneousEquations {
       default: // format === SolutionFormat.Array
         return solutions;
     }
+  }
+
+  /**
+   * 
+   * Checks which of the equations are satisfied by a particular solution.
+   * 
+   * @param solution array of variable values that satisfy the equations
+   * @returns an array of booleans for each equation that the solutions are tested against.
+   *          [true, true, false] means the solutions satisfy only the first two equations and not the last one
+   */
+  checkSolution(solution: number[]): boolean[] {
+    const coefficientsForEquations = this.coefficientMatrix.rows;
+    const constantsForEquations = this.constantMatrix.transpose().rows[0];
+    return coefficientsForEquations.map((coefficients, index) => {
+      const expectedResult = constantsForEquations[index];
+      const result = coefficients.reduce((accumulator, coefficient, index) => {
+        const variableValue = solution[index];
+        return accumulator + (coefficient * variableValue)
+      }, 0);
+      return result === expectedResult;
+    });
   }
 
 }
