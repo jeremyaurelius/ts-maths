@@ -20,7 +20,7 @@ export class Matrix {
    */
   constructor(
     /**
-     * Two dimensional array, presenting matrix contents.
+     * Two dimensional array, representing matrix contents.
      * This indexed by rows first, then by columns
      * [rowIndex][columnIndex]
      */
